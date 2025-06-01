@@ -1,0 +1,559 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body, html {
+  background: #000;
+  color: #fff;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: #111;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e50914;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav a,
+.modal-open-btn {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  border-radius: 6px;
+}
+
+nav a:hover,
+.modal-open-btn:hover {
+  color: #ff6ec4;
+  background: rgba(255,110,196,0.1);
+}
+
+/* Audio Button */
+.audio-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #e50914;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.7);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+.audio-btn:hover {
+  background: #b20710;
+}
+
+/* Home / Hero */
+section#home {
+  position: relative;
+  height: 100vh;
+  background: url('images/bg-1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+section#home .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+section#home .content {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+}
+
+section#home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+section#home p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons .btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buttons .btn:hover {
+  background: #b20710;
+}
+
+/* Letter Section */
+section#letter {
+  padding: 3rem 5%;
+  background: linear-gradient(to bottom, #1e1e2f, #0e0e1a);
+  min-height: 100vh;
+}
+
+section#letter .title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section#letter .letter-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 2s ease-out;
+  color: #ddd;
+}
+
+/* Memories Section */
+section#memories {
+  padding: 3rem 5%;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+}
+
+section#memories .section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section#memories h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fceaff;
+  border-bottom: 2px solid #ff6ec4;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Center gallery items */
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  width: 220px;
+  max-width: 90vw;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  background: #222;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.caption {
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Wishes Section */
+section#wishes {
+  padding: 3rem 5%;
+  background: linear-gradient(to bottom, #1a1a2e, #121222);
+  min-height: 80vh;
+}
+
+section#wishes .section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wishes-container {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wish-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  font-size: 1.1rem;
+  color: #eee;
+  animation: fadeIn 1s ease-out;
+}
+
+.wish-text {
+  margin-bottom: 0.5rem;
+}
+
+.wish-from {
+  font-weight: 700;
+  font-style: italic;
+  text-align: right;
+  color: #ff6ec4;
+}
+
+/* Wishes Form */
+#wishForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+#wishForm h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ff6ec4;
+  font-size: 1.8rem;
+}
+
+#wishForm label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+#wishForm input[type="text"],
+#wishForm textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  resize: vertical;
+  transition: background-color 0.3s ease;
+}
+
+#wishForm input[type="text"]:focus,
+#wishForm textarea:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+#wishForm button {
+  display: block;
+  width: 100%;
+  background-color: #ff6ec4;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#wishForm button:hover {
+  background-color: #d54aa4;
+}
+
+/* Game Section (Puzzle Netflix Style) */
+section#game {
+  padding: 3rem 5%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #111111);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section#game .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #e50914, #b81d24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.puzzle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+}
+
+#puzzle {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 4px;
+  margin: 1rem auto;
+  background: #111;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.8);
+  width: 320px;
+  height: 320px;
+  transition: all 0.3s ease;
+}
+
+.piece {
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.piece:hover {
+  transform: scale(1.05);
+  border-color: #ff6ec4;
+}
+
+.piece.selected {
+  border-color: #e50914;
+}
+
+/* Buttons */
+#resetBtn {
+  background: #e50914;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 3rem;
+}
+
+#resetBtn:hover {
+  background: #b81d24;
+}
+
+#message {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ff6ec4;
+  min-height: 2em;
+}
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #121212;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+  text-align: center;
+  color: #eee;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.6rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ff6ec4;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e50914;
+}
+
+.clue {
+  margin-top: 1rem;
+}
+
+.clue img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+.clue img:hover {
+  filter: blur(1.5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 3%;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  nav a,
+  .modal-open-btn {
+    margin-left: 0;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  section#home h1 {
+    font-size: 2rem;
+  }
+
+  section#letter .title {
+    font-size: 1.8rem;
+  }
+
+  section#letter .letter-content {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  section#memories .section-title {
+    font-size: 2rem;
+  }
+
+  section#memories h3 {
+    font-size: 1.4rem;
+  }
+
+  .gallery-item {
+    width: 90vw;
+  }
+
+  .wishes-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  #wishForm {
+    padding: 1.5rem 1rem;
+  }
+
+  #puzzle {
+    width: 240px;
+    height: 240px;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+  }
+
+  .piece {
+    width: 60px;
+    height: 60px;
+  }
+
+  .clue img {
+    max-width: 200px;
+  }
+}
