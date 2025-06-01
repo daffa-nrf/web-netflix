@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday JILUT🙌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/konten-3.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <audio id="bg-music" loop>
+    <source src="audio/Rio Clappy - Bunga Abadi (Official Lyric Video).mp3" type="audio/mpeg" />
+    Browsermu tidak mendukung audio.
+  </audio>
+  <audio id="happy-birthday">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6647dd9d41.mp3?filename=happy-birthday-to-you-piano-version-10990.mp3" type="audio/mpeg" />
+    Browsermu tidak mendukung audio.
+  </audio>
+  <button class="audio-btn" aria-label="Toggle background music" onclick="toggleMusic()">🔊</button>
+
+  <header>
+    <div class="logo">NETZILA</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#letter">Surat</a>
+      <a href="#memories">Kenangan</a>
+      <a href="#wishes">Keinginan</a>
+      <a href="#game">Game</a>
+      <button class="modal-open-btn" aria-label="Buka modal bantuan" onclick="onHelpClick()">Clue</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" aria-label="Home">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Happy Birthday!</h1>
+        <p>Hallo, Selamat datang di Web ulang tahun kamu Zila!! 😎🎉</p>
+        <div class="buttons">
+          <button class="btn" aria-label="Mulai musik latar" onclick="playBgMusic()">▶ Play Musik</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section id="letter" aria-label="Letter">
+      <h1 class="title">Surat Untuk Jilut 💌</h1>
+      <div class="letter-content">
+        <p>Hallo Zila, perempuan yang pernah menjadi salah satu bagian dari prosesku🌟,</p>
+        <p>Selamat ulang tahun! Di hari spesial ini, aku pengen ngasih kamu web ini btw, ini webnya baru aku bikin di hari sabtu kemarin, mumpung aku pulang ke ke klaten yakann hehe, sekalian aku bikinin ini buat kamu😎 </p>
+        <br>
+        <p>Oh yaa balik lagi ke kamu, kamu berarti sudah 20 tahun yakk🤔 Sudah berkepala 2 nih, buseet dah🤣kerasa gakk nih kamu udah di 20 tahun ? hehe, Pesanku buat kamu semoga di umur kamu ini kamu bisa dapet banyak kebahagiaan, banyak rezeki dan juga banyak dikelilingi dengan orang orang yang baik yaah</p>
+        <br>
+        <p>Yaaa walaupun aku ga lagi deket sama kamu😁Tapi aku terus berharap kamu selalu diberikan kebahagiaan yaa, pokoknya jangan sampai kaya disini pas kamu kesepian duluu dehh😎</p>
+        <br>
+        <p>Dahh deh cukup gini ajaa yaa dari aku, Babaiii😝👋</p>
+
+        <p style="margin-top: 2rem; text-align: right;">- Daffa</p>
+      </div>
+    </section>
+
+    <!-- MEMORIES -->
+    <section id="memories" aria-label="Memories">
+      <h2 class="section-title">Foto kamu 🎥</h2>
+
+      <div>
+        <h3>Zila pas Kecil 🐣</h3>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/anak-2.jpg" alt="Foto masa kecil Zila dengan helm kecil" />
+            <div class="caption">Kamu waktu kecil, haha lucu banget pake helm kecil 🧸</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/anak-1.jpg" alt="Foto masa kecil Zila lainnya" />
+            <div class="caption">Lihat pipinya! Gemes banget 😆</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h3>Grown Up Moments 🌸</h3>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/konten-1.jpg" alt="Zila jadi pasukan di LKBB Dewantara" />
+            <div class="caption">Waktu zila jadi pasukan di LKBB Dewantara</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/konten-2.jpg" alt="Zila ikut lomba nunggu pengumuman" />
+            <div class="caption">Ini pas Zila ikut lomba, nungguin pengumuman</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/konten-3.jpg" alt="Zila juara di LKS" />
+            <div class="caption">YEAYY, Ini pas zila dapet juara di LKS</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/konten-4.jpg" alt="Zila jadi MC di LKBB Prasaja" />
+            <div class="caption">Kalau ini pas pertama kali Zila jadi MC di LKBB Prasaja</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WISHES -->
+    <section id="wishes" aria-label="Wishes">
+      <h2 class="section-title">Harapan di umur kamu ini 🙌</h2>
+
+      <div class="wishes-container" id="wishes-container">
+        <div class="wish-card">
+          <p class="wish-text">Semoga hari-harimu selalu dipenuhi senyuman dan kebahagiaan 💖</p>
+          <p class="wish-from">- Daffa</p>
+        </div>
+      </div>
+
+      <form id="wishForm" aria-label="Form kirim ucapan ulang tahun">
+        <h3>Kirim Ucapanmu 💌</h3>
+        <label for="nama">Nama Kamu</label>
+        <input type="text" id="nama" placeholder="Tulis namamu di sini" required aria-required="true" />
+        <label for="ucapan">Isi Ucapan</label>
+        <textarea id="ucapan" rows="4" placeholder="Tulis ucapan ulang tahunmu..." required aria-required="true"></textarea>
+        <button type="submit" aria-label="Kirim ucapan ulang tahun">Kirim</button>
+      </form>
+
+    </section>
+
+    <!-- GAME / PUZZLE -->
+    <section id="game" aria-label="Game Puzzle">
+      <h2 class="section-title">Game Puzzle Zila 🧩</h2>
+      <div class="puzzle-section">
+        <div id="puzzle"></div>
+        <button id="resetBtn" aria-label="Acak ulang puzzle">Acak Ulang Puzzle</button>
+        <div id="message" role="alert" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+    <div class="modal">
+      <button class="close-btn" aria-label="Tutup modal" onclick="hideModal()">×</button>
+      <h2 id="modalTitle">Bantu Zila yuk!</h2>
+      <p>Bantu Zila menyusun potongan fotonya agar kembali menjadi satu 💖</p>
+      <div class="clue-image clue">
+        <img src="images/puzzle-2.jpg" alt="Foto petunjuk puzzle Zila" />
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const bgMusic = document.getElementById('bg-music');
+    const happyMusic = document.getElementById('happy-birthday');
+    let isMuted = true;
+
+    bgMusic.volume = 0.2;
+
+    // play musik latar otomatis
+    window.addEventListener('load', () => {
+      bgMusic.muted = true;
+      bgMusic.play().catch(() => {});
+      initPositions();
+      createPuzzle();
+      showModal();
+    });
+
+    function toggleMusic() {
+      isMuted = !isMuted;
+      if (!isMuted) {
+        bgMusic.muted = false;
+        bgMusic.play();
+        document.querySelector('.audio-btn').textContent = '🔊';
+      } else {
+        bgMusic.pause();
+        bgMusic.muted = true;
+        document.querySelector('.audio-btn').textContent = '🔈';
+      }
+    }
+
+    function playBgMusic() {
+      if (bgMusic.paused) {
+        isMuted = false;
+        bgMusic.muted = false;
+        bgMusic.play();
+        document.querySelector('.audio-btn').textContent = '🔊';
+      }
+    }
+
+    // form ucapan
+    const form = document.getElementById('wishForm');
+    const container = document.getElementById('wishes-container');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nama = document.getElementById('nama').value.trim();
+      const ucapan = document.getElementById('ucapan').value.trim();
+
+      if(nama === '' || ucapan === '') {
+        alert('Nama dan ucapan tidak boleh kosong!');
+        return;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+      card.innerHTML = `<p class="wish-text">${ucapan}</p><p class="wish-from">- ${nama}</p>`;
+      container.appendChild(card);
+      form.reset();
+    });
+
+    // puzzle
+    const puzzleEl = document.getElementById('puzzle');
+    const resetBtn = document.getElementById('resetBtn');
+    const messageEl = document.getElementById('message');
+    const modalBg = document.getElementById('modalBg');
+    const gameSection = document.getElementById('game');
+
+    const size = 4;
+    let positions = [];
+    let firstSelected = null;
+    let isPuzzleSolved = false;
+
+    function initPositions() {
+      positions = Array.from({ length: size * size }, (_, i) => i + 1);
+      do {
+        shuffle(positions);
+      } while (isSolved());
+      isPuzzleSolved = false;
+    }
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    function createPuzzle() {
+      puzzleEl.innerHTML = '';
+      const width = puzzleEl.clientWidth || 320;
+      const tileSize = width / size;
+
+      for (let i = 0; i < positions.length; i++) {
+        const val = positions[i];
+        const piece = document.createElement('div');
+        piece.className = 'piece';
+        piece.style.width = `${tileSize}px`;
+        piece.style.height = `${tileSize}px`;
+        const bgX = ((val - 1) % size) * -tileSize;
+        const bgY = Math.floor((val - 1) / size) * -tileSize;
+        piece.style.backgroundImage = "url('images/puzzle-2.jpg')";
+        piece.style.backgroundSize = `${width}px ${width}px`;
+        piece.style.backgroundPosition = `${bgX}px ${bgY}px`;
+        piece.style.display = 'inline-block';
+        piece.style.cursor = 'pointer';
+        piece.style.border = '1px solid #ccc';
+        piece.addEventListener('click', () => selectPiece(i));
+        if (firstSelected === i) piece.style.outline = '3px solid #e91e63';
+        puzzleEl.appendChild(piece);
+      }
+    }
+
+    function selectPiece(index) {
+      if (firstSelected === null) {
+        firstSelected = index;
+      } else if (firstSelected === index) {
+        firstSelected = null;
+      } else {
+        [positions[firstSelected], positions[index]] = [positions[index], positions[firstSelected]];
+        firstSelected = null;
+
+        if (isSolved()) {
+          isPuzzleSolved = true;
+          messageEl.textContent = "🎉 Yeay! Puzzle selesai!!";
+        } else {
+          messageEl.textContent = "Bagus! Lanjutkan susun puzzlenya!";
+        }
+      }
+      createPuzzle();
+    }
+
+    function isSolved() {
+      return positions.every((val, i) => val === i + 1);
+    }
+
+    function resetPuzzle() {
+      initPositions();
+      createPuzzle();
+      messageEl.textContent = '';
+      firstSelected = null;
+      isPuzzleSolved = false;
+    }
+
+    function showModal() {
+      modalBg.style.display = 'flex';
+    }
+
+    function hideModal() {
+      modalBg.style.display = 'none';
+    }
+
+    function onHelpClick() {
+      showModal();
+      if (isPuzzleSolved) {
+        alert("Selamat Ulang Tahun Zila! Semoga selalu bahagia dan penuh cinta 🎂💖");
+        happyMusic.play();
+      }
+    }
+
+    window.addEventListener('resize', createPuzzle);
+    resetBtn.addEventListener('click', resetPuzzle);
+  </script>
+</body>
+</html>
